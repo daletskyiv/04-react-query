@@ -79,11 +79,16 @@ export default function App() {
     setPage(page);
   };
 
+  const handleSubmit = (query: string) => {
+    setQuery(query);
+    setPage(1);
+  };
+
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
 
-      <SearchBar onSubmit={setQuery} />
+      <SearchBar onSubmit={handleSubmit} />
 
       {movies.length > 0 && (
         <Pagination
